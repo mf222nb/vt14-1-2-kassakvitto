@@ -1,0 +1,15 @@
+﻿body {
+}
+
+#RecieptPanel {
+    width: 150px;
+    border: 1px #000000 solid;
+}
+
+#MyCompareValidator {
+    color: red;
+}
+
+#MyRequiredFieldValidator {
+    color: red;
+}
