@@ -43,33 +43,28 @@ namespace WebApplication1.Model
         {
             Subtotal = subtotal;
 
-            if (Subtotal > 0 && Subtotal <= 499)
+            if (Subtotal < 500)
             {
                 DiscountRate = 0;
-                MoneyOff = 0;
-                Total = Subtotal;
             }
 
-            else if (Subtotal >= 500 && Subtotal <= 999)
+            else if (Subtotal < 1000)
             {
                 DiscountRate = 0.05;
-                MoneyOff = Subtotal * 0.05;
-                Total = Subtotal - MoneyOff;
             }
 
-            else if (Subtotal >= 1000 && Subtotal <= 4999)
+            else if (Subtotal < 5000)
             {
                 DiscountRate = 0.10;
-                MoneyOff = Subtotal * 0.10;
-                Total = Subtotal - MoneyOff;
             }
 
-            else if (Subtotal >= 5000)
+            else
             {
                 DiscountRate = 0.15;
-                MoneyOff = Subtotal * 0.15;
-                Total = Subtotal - MoneyOff;
             }
+
+            MoneyOff = Subtotal * DiscountRate;
+            Total = Subtotal - MoneyOff;
         }
     }
 }

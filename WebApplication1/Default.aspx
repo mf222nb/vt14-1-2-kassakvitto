@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.Default" ViewStateMode="Disabled"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebApplication1.Default" ViewStateMode="Disabled" %>
 
 <!DOCTYPE html>
 
@@ -8,14 +8,16 @@
     <link href="~/Content/style.css" rel="stylesheet" />
 </head>
 <body>
-    <h1>Kassa Kvitto</h1>
+    <header class="header">
+        <h1>Kassa Kvitto</h1>
+    </header>
     <form id="form1" runat="server">
         <div>
             <p>Total Köpsumma:</p>
-            <asp:TextBox ID="MyTextBox" runat="server"></asp:TextBox>kr
+            <asp:TextBox ID="MyTextBox" runat="server"></asp:TextBox><p>kr</p>
             <asp:CompareValidator ID="MyCompareValidator" runat="server" ErrorMessage="Måste vara ett tal som är större än 0" ControlToValidate="MyTextBox" Operator="GreaterThan" ValueToCompare="0" Type="Double" Display="Dynamic"></asp:CompareValidator>
             <asp:RequiredFieldValidator ID="MyRequiredFieldValidator" runat="server" ErrorMessage="Ange en total köpesumma" ControlToValidate="MyTextBox" Display="Dynamic"></asp:RequiredFieldValidator>
-            <p>
+            <p id="bottom">
                 <asp:Button ID="SubmitButton" runat="server" Text="Beräkna rabatt" OnClick="SubmitButton_Click" />
             </p>
         </div>
